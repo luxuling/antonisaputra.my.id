@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { domAnimation, LazyMotion, m, Variants } from 'framer-motion';
 import { useMemo } from 'react';
 
 import { cn } from '@/lib';
@@ -38,9 +38,9 @@ const BlurFadeText = ({
   if (animateByCharacter) {
     return (
       <div className='flex'>
-        <AnimatePresence>
+        <LazyMotion features={domAnimation}>
           {characters.map((char, i) => (
-            <motion.span
+            <m.span
               key={i}
               initial='hidden'
               animate='visible'
@@ -55,17 +55,17 @@ const BlurFadeText = ({
               style={{ width: char.trim() === '' ? '0.2em' : 'auto' }}
             >
               {char}
-            </motion.span>
+            </m.span>
           ))}
-        </AnimatePresence>
+        </LazyMotion>
       </div>
     );
   }
 
   return (
     <div className='flex'>
-      <AnimatePresence>
-        <motion.span
+      <LazyMotion features={domAnimation}>
+        <m.span
           initial='hidden'
           animate='visible'
           exit='hidden'
@@ -78,8 +78,8 @@ const BlurFadeText = ({
           className={cn('inline-block', className)}
         >
           {text}
-        </motion.span>
-      </AnimatePresence>
+        </m.span>
+      </LazyMotion>
     </div>
   );
 };
