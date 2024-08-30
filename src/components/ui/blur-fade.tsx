@@ -1,8 +1,9 @@
 'use client';
 
 import {
-  AnimatePresence,
-  motion,
+  domAnimation,
+  LazyMotion,
+  m,
   useInView,
   UseInViewOptions,
   Variants,
@@ -44,9 +45,10 @@ const BlurFade = ({
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
+
   return (
-    <AnimatePresence>
-      <motion.div
+    <LazyMotion features={domAnimation}>
+      <m.div
         ref={ref}
         initial='hidden'
         animate={isInView ? 'visible' : 'hidden'}
@@ -60,8 +62,8 @@ const BlurFade = ({
         className={className}
       >
         {children}
-      </motion.div>
-    </AnimatePresence>
+      </m.div>
+    </LazyMotion>
   );
 };
 
