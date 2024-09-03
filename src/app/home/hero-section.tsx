@@ -13,18 +13,18 @@ export default function HeroSection() {
         <div className='gap-2 flex justify-between'>
           <div className='flex-col flex flex-1 space-y-1.5'>
             <BlurFadeText
-              delay={0.5}
-              className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none'
+              delay={DATA.animateDelay}
+              className='font-bold tracking-tighter text-3xl md:text-5xl xl:text-6xl/none'
               yOffset={8}
               text={`Hi, I'm ${DATA.name.split(' ')[0]}👋`}
             />
             <BlurFadeText
-              className='max-w-[600px] md:text-xl'
-              delay={1}
+              className='max-w-[600px] text-lg md:text-xl'
+              delay={DATA.animateDelay * 2}
               text={DATA.description}
             />
           </div>
-          <BlurFade delay={1.5}>
+          <BlurFade delay={DATA.animateDelay * 3}>
             <Image
               alt='Profile picture'
               placeholder='blur'
