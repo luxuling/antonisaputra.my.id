@@ -1,5 +1,6 @@
 import AboutSection from './home/about-section';
 import HeroSection from './home/hero-section';
+import ProjectSection from './home/project-section';
 import SkillSection from './home/skill-section';
 import WorkExperience from './home/work-exp-section';
 
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutSection />
       <SkillSection />
       <WorkExperience />
+      <ProjectSection />
     </main>
   );
 }

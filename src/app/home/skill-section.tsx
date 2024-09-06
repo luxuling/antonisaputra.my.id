@@ -3,6 +3,7 @@ import React from 'react';
 import DATA from '@/data';
 
 import { Badge } from '@/components/ui/badge';
+import BlurFade from '@/components/ui/blur-fade';
 import BlurFadeText from '@/components/ui/blur-fade-text';
 
 const SkillSection = () => {
@@ -14,8 +15,10 @@ const SkillSection = () => {
         className='font-semibold text-lg md:font-bold md:text-xl'
       />
       <div className='flex flex-wrap gap-2 mt-1'>
-        {DATA.skills.map((skill) => (
-          <Badge key={skill}>{skill}</Badge>
+        {DATA.skills.map((skill, index) => (
+          <BlurFade key={skill} delay={DATA.animateDelay * index + 0.2}>
+            <Badge>{skill}</Badge>
+          </BlurFade>
         ))}
       </div>
     </section>
