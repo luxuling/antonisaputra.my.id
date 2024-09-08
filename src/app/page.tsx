@@ -7,11 +7,13 @@ import WorkExperience from './home/work-exp-section';
 
 export default function Home() {
   return (
-    <main className='flex flex-col gap-8'>
-      <HeroSection />
-      <AboutSection />
-      <SkillSection />
-      <WorkExperience />
+    <main className='flex flex-col gap-20'>
+      <section className='flex flex-col gap-8'>
+        <HeroSection />
+        <AboutSection />
+        <SkillSection />
+        <WorkExperience />
+      </section>
       <ProjectSection />
       <ServiceSection />
     </main>
