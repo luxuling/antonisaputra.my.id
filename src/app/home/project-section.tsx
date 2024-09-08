@@ -4,7 +4,7 @@ import { getRecentProjects } from '@/lib/mdx';
 
 import DATA from '@/data';
 
-import BlurFade from '@/components/ui/blur-fade';
+import BlurFade from '@/components/effect/blur-fade';
 import { ProjectCard } from '@/components/ui/project-card';
 
 const ProjectSection = async () => {

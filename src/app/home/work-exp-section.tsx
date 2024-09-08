@@ -2,8 +2,8 @@ import React from 'react';
 
 import DATA from '@/data';
 
-import BlurFade from '@/components/ui/blur-fade';
-import BlurFadeText from '@/components/ui/blur-fade-text';
+import BlurFade from '@/components/effect/blur-fade';
+import BlurFadeText from '@/components/effect/blur-fade-text';
 import { ResumeCard } from '@/components/ui/resume-card';
 
 const WorkExperience = () => {

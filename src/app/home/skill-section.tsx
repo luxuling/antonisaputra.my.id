@@ -2,9 +2,9 @@ import React from 'react';
 
 import DATA from '@/data';
 
+import BlurFade from '@/components/effect/blur-fade';
+import BlurFadeText from '@/components/effect/blur-fade-text';
 import { Badge } from '@/components/ui/badge';
-import BlurFade from '@/components/ui/blur-fade';
-import BlurFadeText from '@/components/ui/blur-fade-text';
 
 const SkillSection = () => {
   return (
