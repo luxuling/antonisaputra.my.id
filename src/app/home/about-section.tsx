@@ -5,8 +5,8 @@ import ReactMarkDown from 'react-markdown';
 
 import DATA from '@/data';
 
-import BlurFade from '@/components/ui/blur-fade';
-import BlurFadeText from '@/components/ui/blur-fade-text';
+import BlurFade from '@/components/effect/blur-fade';
+import BlurFadeText from '@/components/effect/blur-fade-text';
 
 const AboutSection = () => {
   const [showMore, setShowMore] = React.useState(false);

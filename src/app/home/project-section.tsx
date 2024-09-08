@@ -4,7 +4,7 @@ import { getRecentProjects } from '@/lib/mdx';
 
 import DATA from '@/data';
 
-import BlurFade from '@/components/ui/blur-fade';
+import BlurFade from '@/components/effect/blur-fade';
 import { ProjectCard } from '@/components/ui/project-card';
 
 const ProjectSection = async () => {
@@ -16,7 +16,7 @@ const ProjectSection = async () => {
         <div className='flex flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>
             <div className='inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm'>
-              My Projects
+              Latest Projects
             </div>
             <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
               Check out my latest work

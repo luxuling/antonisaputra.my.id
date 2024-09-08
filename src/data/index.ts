@@ -29,7 +29,7 @@ const DATA = {
       href: 'https://flexstudio.id',
       badges: [],
       location: 'Jogja - Indonesia',
-      title: 'Software Engineer',
+      title: 'Founder',
       logoUrl: '/flx.png',
       start: 'Jan 2024',
       end: 'Now',
