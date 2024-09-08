@@ -9,17 +9,14 @@ import { Badge } from '@/components/ui/badge';
 
 const ServiceSection = () => {
   return (
-    <section className='mx-auto w-full max-w-2xl'>
+    <section className='mx-auto w-full max-w-2xl border rounded-lg py-3 items-center justify-center bg-black'>
       <BlurFade delay={DATA.animateDelay}>
         <div className='flex flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>
-            <div className='inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm'>
-              Team Up
-            </div>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
+            <h2 className='text-3xl text-white font-bold tracking-tighter sm:text-5xl'>
               Want to build something with me?
             </h2>
-            <p className='text-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
+            <p className='text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
               If you have an idea to build something and don't know how to turn
               it into reality, let me help you! 😎
             </p>
@@ -28,7 +25,7 @@ const ServiceSection = () => {
             target='_blank'
             href='https://api.whatsapp.com/send?phone=62895358367900&text=Hi!'
           >
-            <Badge className=' text-sm md:text-base gap-2 py-2'>
+            <Badge className='text-sm md:text-base gap-2 py-2 bg-white text-black hover:bg-white/60'>
               <MessageCircle />
               Talk to me!
             </Badge>
