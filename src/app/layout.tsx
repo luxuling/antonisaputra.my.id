@@ -5,6 +5,8 @@ import './globals.css';
 
 import { cn } from '@/lib';
 
+import Layout from '@/components/layouts';
+
 const sans = JetBrains_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -25,7 +27,7 @@ export default function RootLayout({
           'min-h-screen bg-background antialiased py-12 sm:py-24 px-6',
         )}
       >
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

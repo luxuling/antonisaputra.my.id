@@ -49,6 +49,28 @@ const DATA = {
         'Contributed to several projects, including e-commerce and management apps, using multiple languages and frameworks. Started with VueJS and NuxtJS and ended with C# and .NET.',
     },
   ],
+  socialMedia: [
+    {
+      label: 'Threads',
+      icon: '/icons/threads.svg',
+      url: 'https://www.threads.net/@codewithlixu',
+    },
+    {
+      label: 'Discord',
+      icon: '/icons/discord.svg',
+      url: 'https://discord.gg/j7aYx3cASj',
+    },
+    {
+      label: 'Tiktok',
+      icon: '/icons/tiktok.svg',
+      url: 'https://www.tiktok.com/@lixu_flexstudio.id',
+    },
+    {
+      label: 'Email',
+      icon: '/icons/email.svg',
+      url: 'antonisaputra049@gmail.com',
+    },
+  ],
 };
 
 export default DATA;
