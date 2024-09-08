@@ -29,7 +29,7 @@ const BlurFade = ({
   variant,
   duration = 0.4,
   delay = 0,
-  yOffset = 6,
+  yOffset = 0,
   inView = false,
   margin = '-50px',
   blur = '6px',
