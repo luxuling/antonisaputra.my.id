@@ -1,8 +1,9 @@
-import { IProject } from '@/types';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
+
+import { IProject } from '@/types';
 
 const root = process.cwd();
 
