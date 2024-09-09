@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/tooltip';
 
 import BlurFade from './effect/blur-fade';
+import SpotifyNowPlaying from './spotify-now-playing';
 
 const Footer = () => {
   const [isCopied, setIsCopied] = React.useState<boolean>(false);
@@ -31,7 +32,7 @@ const Footer = () => {
       .catch(() => setIsCopied(false));
   };
   return (
-    <footer className='mt-20'>
+    <footer className='mt-20 flex flex-col items-center'>
       <div className='grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12'>
         <BlurFade delay={DATA.animateDelay * 0.4}>
           <div className='space-y-3'>
@@ -73,6 +74,7 @@ const Footer = () => {
           </div>
         </BlurFade>
       </div>
+      <SpotifyNowPlaying />
     </footer>
   );
 };
