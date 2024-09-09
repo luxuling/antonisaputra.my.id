@@ -22,7 +22,7 @@ export default function SpotifyNowPlaying() {
       href={
         data?.isPlaying
           ? data.songUrl
-          : 'https://open.spotify.com/user/erence21?si=yTsrZT5JSHOp7tn3ist7Ig'
+          : 'https://open.spotify.com/user/31rn7zt33qzljgvqmiklfkcaxcle'
       }
       className='relative flex w-72 items-center space-x-4 rounded-md border p-5 transition-shadow hover:shadow-md'
     >
