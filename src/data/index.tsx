@@ -1,5 +1,10 @@
 import profilePng from '@/../public/PP.png';
 
+import DiscordIcon from '../../public/icons/discord';
+import EmailIcon from '../../public/icons/email';
+import ThreadsIcon from '../../public/icons/threads';
+import TiktokIcon from '../../public/icons/tiktok';
+
 const DATA = {
   name: 'Antoni',
   description:
@@ -42,7 +47,7 @@ const DATA = {
       badges: [],
       location: 'Jogja - Indonesia',
       title: 'Software Engineer',
-      logoUrl: '/rf.png',
+      logoUrl: '/rf.jpeg',
       start: 'Agu 2023',
       end: 'Nov 2023',
       description:
@@ -52,22 +57,22 @@ const DATA = {
   socialMedia: [
     {
       label: 'Threads',
-      icon: '/icons/threads.svg',
+      icon: ThreadsIcon,
       url: 'https://www.threads.net/@codewithlixu',
     },
     {
       label: 'Discord',
-      icon: '/icons/discord.svg',
+      icon: DiscordIcon,
       url: 'https://discord.gg/j7aYx3cASj',
     },
     {
       label: 'Tiktok',
-      icon: '/icons/tiktok.svg',
+      icon: TiktokIcon,
       url: 'https://www.tiktok.com/@lixu_flexstudio.id',
     },
     {
       label: 'Email',
-      icon: '/icons/email.svg',
+      icon: EmailIcon,
       url: 'antonisaputra049@gmail.com',
     },
   ],

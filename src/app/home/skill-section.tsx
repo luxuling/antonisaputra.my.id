@@ -12,9 +12,9 @@ const SkillSection = () => {
       <BlurFadeText
         delay={DATA.animateDelay * 5}
         text='Equipment'
-        className='font-semibold text-lg md:font-bold md:text-xl'
+        className='font-semibold text-foreground text-lg md:font-bold md:text-xl'
       />
-      <div className='flex flex-wrap gap-2 mt-1'>
+      <div className='flex flex-wrap text-foreground gap-2 mt-1'>
         {DATA.skills.map((skill, index) => (
           <BlurFade key={skill} delay={DATA.animateDelay * index + 0.2}>
             <Badge>{skill}</Badge>
