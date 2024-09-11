@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import * as React from 'react';
 
 import { copyToClipboard } from '@/lib';
@@ -32,7 +31,7 @@ const Footer = () => {
       .catch(() => setIsCopied(false));
   };
   return (
-    <footer className='mt-20 flex flex-col items-center'>
+    <footer className='mt-20 flex flex-col items-center pb-20'>
       <div className='grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12'>
         <BlurFade delay={DATA.animateDelay * 0.4}>
           <div className='space-y-3'>
@@ -50,13 +49,9 @@ const Footer = () => {
                     <TooltipTrigger
                       onClick={(e) => clickHandler(e, item.label, item.url)}
                     >
-                      <Image
-                        src={item.icon}
-                        width={25}
-                        height={25}
-                        alt='social media icon'
-                        className='w-6 h-6'
-                      />
+                      <div className='flex w-6 text-foreground'>
+                        <item.icon />
+                      </div>
                     </TooltipTrigger>
                     <TooltipContent
                       onPointerDownOutside={(e) => e.preventDefault()}

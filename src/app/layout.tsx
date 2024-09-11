@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={cn(
           sans.className,
-          'min-h-screen bg-background antialiased py-12 sm:py-24 px-6',
+          'min-h-screen bg-background py-12 sm:py-24 px-6',
         )}
       >
         <Layout>{children}</Layout>

@@ -16,13 +16,13 @@ const AboutSection = () => {
       <BlurFadeText
         delay={DATA.animateDelay * 5}
         text='About'
-        className='font-semibold text-lg md:font-bold md:text-xl'
+        className='font-semibold text-foreground text-lg md:font-bold md:text-xl'
       />
       <BlurFade delay={DATA.animateDelay * 6} className='mt-1'>
         <ReactMarkDown
           components={{
             p: (props) => (
-              <p>
+              <p className='text-foreground'>
                 {showMore
                   ? props.children
                   : `${props.children}`.substring(0, 120) + '...'}
@@ -49,7 +49,7 @@ const AboutSection = () => {
               </a>
             ),
           }}
-          className='prose prose-p:text-primary prose-strong:font-semibold prose-strong:text-primary'
+          className='prose prose-p:text-foreground prose-a:text-foreground prose-strong:font-semibold prose-strong:text-foreground'
         >
           {DATA.summary}
         </ReactMarkDown>

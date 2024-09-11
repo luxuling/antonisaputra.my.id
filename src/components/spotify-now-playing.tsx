@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 
+import SpotifyIcon from '../../public/icons/spotify';
+
 interface IData {
   album: string;
   albumImageUrl: string;
@@ -36,12 +38,7 @@ export default function SpotifyNowPlaying() {
             alt={data?.album}
           />
         ) : (
-          <Image
-            width={20}
-            height={20}
-            src='/icons/spotify.svg'
-            alt='Spotify'
-          />
+          <SpotifyIcon />
         )}
       </div>
 
@@ -54,7 +51,7 @@ export default function SpotifyNowPlaying() {
         </p>
       </div>
       <div className='absolute bottom-1.5 right-1.5'>
-        <Image width={20} height={20} src='/icons/spotify.svg' alt='Spotify' />
+        <SpotifyIcon />
       </div>
     </Link>
   );
