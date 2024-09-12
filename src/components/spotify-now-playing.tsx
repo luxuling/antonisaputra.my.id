@@ -5,6 +5,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 
 import SpotifyIcon from '../../public/icons/spotify';
+import { cn } from '@/lib';
 
 interface IData {
   album: string;
@@ -26,9 +27,12 @@ export default function SpotifyNowPlaying() {
           ? data.songUrl
           : 'https://open.spotify.com/user/31rn7zt33qzljgvqmiklfkcaxcle'
       }
-      className='relative flex w-72 items-center space-x-4 rounded-md border p-2 transition-shadow hover:shadow-md'
+      className={cn(
+        'relative flex  items-center gap-4 rounded-md border p-3 transition-shadow hover:shadow-md',
+        data?.isPlaying ? 'w-72' : 'w-fit md:w-72',
+      )}
     >
-      <div className='w-16'>
+      <div>
         {data?.isPlaying ? (
           <Image
             width={200}
@@ -38,7 +42,7 @@ export default function SpotifyNowPlaying() {
             alt={data?.album}
           />
         ) : (
-          <SpotifyIcon />
+          <SpotifyIcon width={40} height={40} />
         )}
       </div>
 
@@ -50,9 +54,13 @@ export default function SpotifyNowPlaying() {
           {data?.isPlaying ? data.artist : 'Spotify'}
         </p>
       </div>
-      <div className='absolute bottom-1.5 right-1.5'>
-        <SpotifyIcon />
-      </div>
+      {data?.isPlaying ? (
+        <div className='absolute bottom-3 right-3'>
+          <SpotifyIcon width={20} height={20} />
+        </div>
+      ) : (
+        ''
+      )}
     </Link>
   );
 }

@@ -51,10 +51,10 @@ const navbarLinks: INavbarLink[] = [
 const Navbar = () => {
   return (
     <nav className='fixed bottom-6 lg:bottom-10 left-1/2 -translate-x-1/2 z-50'>
-      <Dock direction='middle' className='gap-7'>
-        {navbarLinks.map((link, index) => (
-          <DockIcon key={index}>
-            <TooltipProvider>
+      <TooltipProvider>
+        <Dock direction='middle' className='gap-7'>
+          {navbarLinks.map((link, index) => (
+            <DockIcon key={index}>
               <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild>
                   <Link
@@ -66,13 +66,20 @@ const Navbar = () => {
                 </TooltipTrigger>
                 <TooltipContent>{link.label}</TooltipContent>
               </Tooltip>
-            </TooltipProvider>
+            </DockIcon>
+          ))}
+          <DockIcon>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger>
+                <ThemeToggle />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Theme</p>
+              </TooltipContent>
+            </Tooltip>
           </DockIcon>
-        ))}
-        <DockIcon>
-          <ThemeToggle />
-        </DockIcon>
-      </Dock>
+        </Dock>
+      </TooltipProvider>
     </nav>
   );
 };
