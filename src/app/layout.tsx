@@ -6,6 +6,7 @@ import './globals.css';
 import { cn } from '@/lib';
 
 import Layout from '@/components/layouts';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const sans = JetBrains_Mono({ subsets: ['latin'] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       >
         <Layout>{children}</Layout>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_MEASUREMENT_ID!} />
     </html>
   );
 }
