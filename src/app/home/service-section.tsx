@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 
 const ServiceSection = () => {
   return (
-    <section className='mx-auto w-full max-w-2xl text-background px-3 border rounded-lg py-5 items-center justify-center bg-foreground'>
+    <section className='mx-auto w-full max-w-4xl text-background px-3 border rounded-lg py-5 items-center justify-center bg-foreground'>
       <BlurFade delay={DATA.animateDelay}>
         <div className='flex flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>

@@ -11,7 +11,7 @@ const ProjectSection = async () => {
   const recentProjects = await getRecentProjects();
 
   return (
-    <section className='mx-auto w-full max-w-2xl'>
+    <section className='mx-auto w-full max-w-4xl'>
       <BlurFade delay={DATA.animateDelay}>
         <div className='flex flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>

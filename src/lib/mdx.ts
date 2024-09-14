@@ -1,3 +1,4 @@
+import rehypeShiki from '@shikijs/rehype';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -20,7 +21,22 @@ export const getProjectBySlug = async (slug: string): Promise<IProject> => {
 
   const { content, data } = matter(source);
 
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [
+        [
+          rehypeShiki,
+          {
+            inline: 'tailing-curly-colon',
+            themes: {
+              dark: 'github-dark-default',
+              light: 'github-light-default',
+            },
+          },
+        ],
+      ],
+    },
+  });
 
   const fronMatter = {
     ...data,

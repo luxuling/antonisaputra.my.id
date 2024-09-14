@@ -13,7 +13,7 @@ const DetailProject = async ({ params }: { params: { slug: string } }) => {
   const project = await getProjectBySlug(params.slug);
 
   return (
-    <main className='mx-auto w-full max-w-2xl'>
+    <main className='mx-auto w-full max-w-4xl'>
       <section>
         <Image
           src={project.image}
