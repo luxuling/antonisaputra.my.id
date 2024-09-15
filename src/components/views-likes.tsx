@@ -5,6 +5,8 @@ import React from 'react';
 
 import { Badge } from './ui/badge';
 
+//TODO: integrate it with supabase
+
 const ViewsLikes = () => {
   return (
     <div className='pt-3 flex items-center gap-2'>

@@ -6,8 +6,8 @@ import React from 'react';
 import { getProjectBySlug } from '@/lib/mdx';
 
 import { MDXwrapper } from '@/components/mdx-wrapper';
+import TableOfContent from '@/components/toc';
 import { Badge } from '@/components/ui/badge';
-import ViewsLikes from '@/components/views-likes';
 
 const DetailProject = async ({ params }: { params: { slug: string } }) => {
   const project = await getProjectBySlug(params.slug);
@@ -32,7 +32,7 @@ const DetailProject = async ({ params }: { params: { slug: string } }) => {
               </Badge>
             ))}
           </div>
-          <ViewsLikes />
+          {/*<ViewsLikes />*/}
           <div className='flex flex-row flex-wrap items-start gap-1 py-3'>
             {project.previewUrl && (
               <Link href={project.previewUrl} target='_blank'>
@@ -53,7 +53,10 @@ const DetailProject = async ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
       </section>
-      {project.mdxSource ? <MDXwrapper {...project.mdxSource} /> : 'loading'}
+      <section className='flex relative gap-5'>
+        {project.mdxSource ? <MDXwrapper {...project.mdxSource} /> : ''}
+        <TableOfContent headings={project.headings} />
+      </section>
     </main>
   );
 };
