@@ -1,0 +1,15 @@
+.mdx {
+  @apply text-foreground;
+}
+.mdx code::after,
+.mdx code::before {
+  display: none;
+}
+
+.mdx code {
+  @apply border rounded-md px-2 py-1 text-foreground inline w-fit;
+}
+
+.mdx blockquote {
+  @apply text-foreground;
+}

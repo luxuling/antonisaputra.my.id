@@ -8,7 +8,7 @@ import { ResumeCard } from '@/components/ui/resume-card';
 
 const WorkExperience = () => {
   return (
-    <section className='mx-auto w-full max-w-2xl'>
+    <section className='mx-auto w-full max-w-4xl'>
       <BlurFadeText
         delay={DATA.animateDelay * 5}
         text='Work Experiences'

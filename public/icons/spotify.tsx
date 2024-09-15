@@ -6,7 +6,7 @@ export default function SpotifyIcon(props: SVGProps<SVGSVGElement>) {
       stroke='currentColor'
       fill='#1ed760'
       viewBox='0 0 496 512'
-      stroke-width='0'
+      strokeWidth='0'
       xmlns='http://www.w3.org/2000/svg'
       aria-label='Spotify'
       {...props}
