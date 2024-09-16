@@ -4,8 +4,9 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 
-import { IHeadings, IProject } from '@/types';
 import { convertToSlug } from '.';
+
+import { IHeadings, IProject } from '@/types';
 
 const root = process.cwd();
 
@@ -70,7 +71,7 @@ export const getAllProjects = async () => {
   const allProjects = await Promise.all(
     allProjectSlugs.map(async (slug) => await getProjectBySlug(slug)),
   );
-  return allProjects.sort((a, b) => Number(a.date) - Number(b.date));
+  return allProjects.sort((a, b) => Number(b.date) - Number(a.date));
 };
 
 export const getRecentProjects = async () => {

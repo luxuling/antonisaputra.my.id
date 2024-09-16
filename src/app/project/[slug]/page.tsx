@@ -1,4 +1,5 @@
 import { Github, Globe } from 'lucide-react';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -9,6 +10,25 @@ import { MDXwrapper } from '@/components/mdx-wrapper';
 import ScrollProgressBar from '@/components/scrooll-progress-bar';
 import TableOfContent from '@/components/toc';
 import { Badge } from '@/components/ui/badge';
+
+type Props = {
+  params: { slug: string };
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { slug } = params;
+  const project = await getProjectBySlug(slug);
+
+  return {
+    title: `Project | ${project.title}`,
+    description: project.description,
+    openGraph: {
+      images: [project.image],
+    },
+  };
+};
 
 const DetailProject = async ({ params }: { params: { slug: string } }) => {
   const project = await getProjectBySlug(params.slug);

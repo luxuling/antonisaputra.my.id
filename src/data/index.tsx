@@ -4,6 +4,7 @@ import DiscordIcon from '../../public/icons/discord';
 import EmailIcon from '../../public/icons/email';
 import ThreadsIcon from '../../public/icons/threads';
 import TiktokIcon from '../../public/icons/tiktok';
+import { Github } from 'lucide-react';
 
 const DATA = {
   name: 'Antoni',
@@ -69,6 +70,11 @@ const DATA = {
       label: 'Tiktok',
       icon: TiktokIcon,
       url: 'https://www.tiktok.com/@lixu_flexstudio.id',
+    },
+    {
+      label: 'Github',
+      icon: Github,
+      url: 'https://github.com/luxuling',
     },
     {
       label: 'Email',
