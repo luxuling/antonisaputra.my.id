@@ -14,6 +14,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
+import ShinyButton from './shiny-button';
+
 interface Props {
   title: string;
   href: string;
@@ -84,10 +86,10 @@ export function ProjectCard({
         <div className='flex flex-row flex-wrap items-start gap-1'>
           {previewUrl && (
             <Link href={previewUrl} target='_blank'>
-              <Badge className='flex gap-2 px-2 py-1 text-xs'>
+              <ShinyButton>
                 <Globe size={20} />
                 Preview
-              </Badge>
+              </ShinyButton>
             </Link>
           )}
           {githubUrl && (

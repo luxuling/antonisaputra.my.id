@@ -43,7 +43,7 @@ export const ResumeCard = ({
     <div className='block'>
       <Card className='flex'>
         <Link href={href || '#'} target='_blank' className='flex-none'>
-          <div className='border size-12 rounded-full dark:bg-foreground overflow-hidden'>
+          <div className='border size-12 rounded-full overflow-hidden'>
             <Image
               width={100}
               height={100}

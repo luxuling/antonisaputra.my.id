@@ -1,10 +1,11 @@
+import { Github } from 'lucide-react';
+
 import profilePng from '@/../public/PP.png';
 
 import DiscordIcon from '../../public/icons/discord';
 import EmailIcon from '../../public/icons/email';
 import ThreadsIcon from '../../public/icons/threads';
 import TiktokIcon from '../../public/icons/tiktok';
-import { Github } from 'lucide-react';
 
 const DATA = {
   name: 'Antoni',

@@ -5,7 +5,7 @@ import React from 'react';
 import DATA from '@/data';
 
 import BlurFade from '@/components/effect/blur-fade';
-import { Badge } from '@/components/ui/badge';
+import ShinyButton from '@/components/ui/shiny-button';
 
 const ServiceSection = () => {
   return (
@@ -25,10 +25,10 @@ const ServiceSection = () => {
             target='_blank'
             href='https://api.whatsapp.com/send?phone=62895358367900&text=Hi!'
           >
-            <Badge className='text-sm md:text-base gap-2 py-2 bg-background text-black hover:bg-background/80 text-foreground'>
+            <ShinyButton variant='reverse'>
               <MessageCircle />
               Talk to me!
-            </Badge>
+            </ShinyButton>
           </Link>
         </div>
       </BlurFade>
