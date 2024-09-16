@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 
-import SpotifyIcon from '../../public/icons/spotify';
 import { cn } from '@/lib';
+
+import SpotifyIcon from '../../public/icons/spotify';
 
 interface IData {
   album: string;
