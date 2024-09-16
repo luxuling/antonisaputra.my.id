@@ -42,7 +42,7 @@ const Footer = () => {
               If you want to have fun on social media with me, you need to check
               these links
             </p>
-            <div className='flex items-center gap-4 justify-center'>
+            <div className='flex items-center gap-6 justify-center'>
               {DATA.socialMedia.map((item, key) => (
                 <TooltipProvider key={key} delayDuration={0}>
                   <Tooltip>
