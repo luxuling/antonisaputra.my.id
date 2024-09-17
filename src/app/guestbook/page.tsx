@@ -2,7 +2,10 @@ import { Pin } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react';
 
+import { MessagesProvider } from '@/components/provider/messages';
+
 import GuestBookForm from './guestbook-form';
+import GuestBookList from './guestbook-list';
 
 export const metadata: Metadata = {
   title: 'Guest Book | Antoni Saputra',
@@ -10,7 +13,7 @@ export const metadata: Metadata = {
 
 const GuestBookPage = () => {
   return (
-    <main>
+    <main className='w-full md:max-w-4xl mx-auto'>
       <section className='w-full border-b pb-10 flex flex-col gap-2'>
         <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
           Guest book
@@ -30,7 +33,10 @@ const GuestBookPage = () => {
           to leave a comment. Thanks!
         </p>
       </section>
-      <GuestBookForm />
+      <MessagesProvider>
+        <GuestBookForm />
+        <GuestBookList />
+      </MessagesProvider>
     </main>
   );
 };
