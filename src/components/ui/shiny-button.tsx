@@ -1,7 +1,7 @@
 'use client';
 
 import { type AnimationProps, motion } from 'framer-motion';
-import { ButtonHTMLAttributes, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { cn } from '@/lib';
 
@@ -25,13 +25,15 @@ const animationProps = {
     },
   },
 } as AnimationProps;
+
 interface ShinyButtonProps {
   children: React.ReactNode;
   className?: string;
   variant?: 'default' | 'reverse';
+  onClick?: () => void;
 }
 
-interface VariantStyle extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface VariantStyle {
   background: string;
   textColor: string;
   animated: string;
@@ -41,6 +43,7 @@ const ShinyButton = ({
   children,
   className,
   variant = 'default',
+  onClick,
   ...props
 }: ShinyButtonProps) => {
   const variantStyle: VariantStyle = useMemo(() => {
@@ -75,6 +78,7 @@ const ShinyButton = ({
         variantStyle.background,
         className,
       )}
+      onClick={onClick}
       {...props}
     >
       <span

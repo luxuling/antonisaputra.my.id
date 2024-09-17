@@ -21,3 +21,14 @@ export interface IProject {
     Record<string, unknown>
   >;
 }
+
+export interface IMessage {
+  id: number;
+  profileId: string;
+  avatar: string;
+  message: string;
+  userName: string;
+  fullName: string;
+  provider: string;
+  createdAt: string;
+}
