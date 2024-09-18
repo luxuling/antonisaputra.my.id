@@ -1,5 +1,5 @@
 .mdx {
-  @apply text-foreground;
+  @apply text-foreground w-full;
 }
 .mdx code::after,
 .mdx code::before {
