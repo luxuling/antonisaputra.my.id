@@ -5,31 +5,27 @@ import React, { HTMLProps } from 'react';
 
 import '@/style/mdx.css';
 
-import { convertToSlug } from '@/lib';
+import Heading from './ui/heading';
 
 export const MDXwrapper = (props: MDXRemoteProps) => {
   const components = {
     h1: (props: HTMLProps<HTMLHeadingElement>) => (
-      <div className='flex items-center gap-2'>
-        <div className='bg-foreground w-1.5 self-stretch' />
-        <h1
-          id={`${convertToSlug(String(props.children))}`}
-          className='text-foreground m-0'
-        >
-          {props.children}
-        </h1>
-      </div>
+      <Heading tag='h1' {...props} />
     ),
     h2: (props: HTMLProps<HTMLHeadingElement>) => (
-      <div className='flex items-center gap-2'>
-        <div className='bg-foreground w-1.5 self-stretch' />
-        <h2
-          id={`${convertToSlug(String(props.children))}`}
-          className='text-foreground m-0'
-        >
-          {props.children}
-        </h2>
-      </div>
+      <Heading tag='h2' {...props} />
+    ),
+    h3: (props: HTMLProps<HTMLHeadingElement>) => (
+      <Heading tag='h3' {...props} />
+    ),
+    h4: (props: HTMLProps<HTMLHeadingElement>) => (
+      <Heading tag='h4' {...props} />
+    ),
+    h5: (props: HTMLProps<HTMLHeadingElement>) => (
+      <Heading tag='h5' {...props} />
+    ),
+    h6: (props: HTMLProps<HTMLHeadingElement>) => (
+      <Heading tag='h6' {...props} />
     ),
   };
 
