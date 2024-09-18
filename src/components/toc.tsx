@@ -39,6 +39,7 @@ export default function TableOfContent({
       if (!visibleHeadings[0]) return;
       setActive(visibleHeadings[0].id);
     }
+    console.log(headings);
   }, [headings]);
 
   React.useEffect(() => {
@@ -62,8 +63,10 @@ export default function TableOfContent({
           <Link
             href={`#${heading.link}`}
             key={heading.link}
+            style={{
+              marginLeft: heading.level > 2 ? heading.level * 5 + 'px' : 0,
+            }}
             className={cn(
-              `ml-${heading.level}`,
               textSize,
               'hover:underline',
               active === heading.link
