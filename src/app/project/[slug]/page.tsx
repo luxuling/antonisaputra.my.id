@@ -10,6 +10,7 @@ import { MDXwrapper } from '@/components/mdx-wrapper';
 import ScrollProgressBar from '@/components/scrooll-progress-bar';
 import TableOfContent from '@/components/toc';
 import { Badge } from '@/components/ui/badge';
+import ViewsLikes from '@/components/views-likes';
 
 type Props = {
   params: { slug: string };
@@ -55,7 +56,7 @@ const DetailProject = async ({ params }: { params: { slug: string } }) => {
                 </Badge>
               ))}
             </div>
-            {/*<ViewsLikes />*/}
+            <ViewsLikes slug={params.slug} contentType='project' />
             <div className='flex flex-row flex-wrap items-start gap-1 py-3'>
               {project.previewUrl && (
                 <Link href={project.previewUrl} target='_blank'>
