@@ -39,7 +39,6 @@ export default function TableOfContent({
       if (!visibleHeadings[0]) return;
       setActive(visibleHeadings[0].id);
     }
-    console.log(headings);
   }, [headings]);
 
   React.useEffect(() => {
@@ -51,7 +50,7 @@ export default function TableOfContent({
   }, [handleScroll]);
 
   return (
-    <div className='hidden lg:flex w-[250px] gap-3 h-fit sticky top-16 flex-col overflow-y-auto flex-shrink-0 text-ellipsis'>
+    <div className='flex w-full gap-3 h-fit flex-col text-ellipsis'>
       {headings.length > 0 && (
         <h2 className='flex items-center gap-2 font-bold'>On this page</h2>
       )}

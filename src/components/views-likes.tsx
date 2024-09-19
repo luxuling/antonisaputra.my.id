@@ -4,6 +4,7 @@ import { Eye, Heart } from 'lucide-react';
 import * as React from 'react';
 import { toast } from 'sonner';
 
+import { useLikesViewsContext } from '@/context/views-likes';
 import createSupabaseCLient from '@/services/supabase-client';
 
 import { Badge } from './ui/badge';
@@ -13,18 +14,9 @@ interface ViewsLikesProps {
   contentType: 'project' | 'blog';
 }
 
-type Content = {
-  views: number;
-  likes: number;
-};
-
 const ViewsLikes = ({ slug, contentType }: ViewsLikesProps) => {
   const supabase = createSupabaseCLient();
-
-  const [content, setContent] = React.useState<Content>({
-    views: 0,
-    likes: 0,
-  });
+  const { state, setState } = useLikesViewsContext();
 
   const table = React.useMemo(() => {
     return contentType === 'blog' ? 'blogs' : 'projects';
@@ -52,7 +44,7 @@ const ViewsLikes = ({ slug, contentType }: ViewsLikesProps) => {
 
     await updateViews(data.views);
 
-    setContent({
+    setState({
       views: data.views + 1,
       likes: data.likes,
     });
@@ -66,11 +58,11 @@ const ViewsLikes = ({ slug, contentType }: ViewsLikesProps) => {
     <div className='pt-3 flex items-center gap-2'>
       <Badge variant='secondary' className='gap-2'>
         <Eye size={15} />
-        {content.views}
+        {state.views}
       </Badge>
       <Badge variant='secondary' className='gap-2'>
         <Heart size={15} />
-        {content.likes}
+        {state.likes}
       </Badge>
     </div>
   );

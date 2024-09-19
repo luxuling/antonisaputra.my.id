@@ -2,7 +2,7 @@ import { Pin } from 'lucide-react';
 import { Metadata } from 'next';
 import React from 'react';
 
-import { MessagesProvider } from '@/components/provider/messages';
+import { MessagesProvider } from '@/context/messages';
 
 import GuestBookForm from './guestbook-form';
 import GuestBookList from './guestbook-list';

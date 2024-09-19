@@ -8,7 +8,7 @@ import React from 'react';
 import { timeAgo } from '@/lib';
 
 import { Card } from './card';
-import { useAuthContext } from '../provider/auth';
+import { useAuthContext } from '../../context/auth';
 
 import { IMessage } from '@/types';
 
