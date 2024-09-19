@@ -35,6 +35,16 @@ export default function LoginDialog({
       },
     });
   };
+
+  const loginGoogleHandler = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}${redirectTo}`,
+      },
+    });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild={true}>{children}</DialogTrigger>
@@ -50,7 +60,11 @@ export default function LoginDialog({
             <GithubIcon />
             Continue with GitHub
           </Button>
-          <Button variant='outline' className='gap-2 text-foreground w-full'>
+          <Button
+            variant='outline'
+            className='gap-2 text-foreground w-full'
+            onClick={loginGoogleHandler}
+          >
             <SiGoogle />
             Continue with Google
           </Button>
