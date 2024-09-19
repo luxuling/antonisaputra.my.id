@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { toast } from 'sonner';
 
-import { useAuthContext } from '@/components/provider/auth';
-import { useMessagesContext } from '@/components/provider/messages';
-
+import { useAuthContext } from '@/context/auth';
+import { useMessagesContext } from '@/context/messages';
 import createSupabaseCLient from '@/services/supabase-client';
 
 const supabase = createSupabaseCLient();

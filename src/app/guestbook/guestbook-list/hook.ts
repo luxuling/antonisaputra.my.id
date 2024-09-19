@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { toast } from 'sonner';
 
-import { useMessagesContext } from '@/components/provider/messages';
-
+import { useMessagesContext } from '@/context/messages';
 import createSupabaseCLient from '@/services/supabase-client';
 
 import { IMessage } from '@/types';
