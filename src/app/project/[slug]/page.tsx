@@ -6,10 +6,10 @@ import React from 'react';
 
 import { getProjectBySlug } from '@/lib/mdx';
 
-import LikeButton from '@/components/like-button';
+import LikeButton from '@/components/content/like-button';
 import { MDXwrapper } from '@/components/mdx-wrapper';
 import ScrollProgressBar from '@/components/scrooll-progress-bar';
-import TableOfContent from '@/components/toc';
+import TableOfContent from '@/components/content/toc';
 import { Badge } from '@/components/ui/badge';
 import ViewsLikes from '@/components/views-likes';
 
@@ -80,13 +80,15 @@ const DetailProject = async ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         </section>
-        <section className='flex relative gap-5'>
+        <aside className='w-full flex flex-col md:flex-row relative gap-5'>
           {project.mdxSource ? <MDXwrapper {...project.mdxSource} /> : ''}
-          <div className='hidden h-fit md:flex flex-col sticky top-16 w-[250px] flex-shrink-0'>
-            <TableOfContent headings={project.headings} />
+          <div className='h-fit w-full flex justify-center md:justify-start md:gap-4 md:flex-col md:sticky md:top-16 md:w-[250px] md:flex-shrink-0'>
+            <div className='hidden md:block'>
+              <TableOfContent headings={project.headings} />
+            </div>
             <LikeButton slug={params.slug} contentType='project' />
           </div>
-        </section>
+        </aside>
       </main>
     </LikesViewsProvider>
   );

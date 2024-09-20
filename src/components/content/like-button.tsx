@@ -8,7 +8,7 @@ import showConfetti from '@/lib/confetti';
 import { useLikesViewsContext } from '@/context/views-likes';
 import createSupabaseCLient from '@/services/supabase-client';
 
-import { Button } from './ui/button';
+import ShinyButton from '../ui/shiny-button';
 
 interface LikeButtonProps {
   slug: string;
@@ -17,7 +17,7 @@ interface LikeButtonProps {
 
 const LikeButton = ({ slug, contentType }: LikeButtonProps) => {
   const { state, setState } = useLikesViewsContext();
-  const [stage, setStage] = React.useState(20);
+  const [stage, setStage] = React.useState(0);
   const supabase = createSupabaseCLient();
 
   const table = React.useMemo(() => {
@@ -27,8 +27,8 @@ const LikeButton = ({ slug, contentType }: LikeButtonProps) => {
   const likeButtonHandler = async () => {
     const likes = state.likes + 1;
 
-    if (stage > 5) {
-      setStage(stage - 3);
+    if (stage !== 5) {
+      setStage(stage + 1);
     }
 
     setState({ ...state, likes: likes });
@@ -58,6 +58,28 @@ const LikeButton = ({ slug, contentType }: LikeButtonProps) => {
     }
   }, [stage]);
 
+  React.useEffect(() => {
+    const channel = supabase
+      .channel('update-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: table,
+        },
+        (payload) => {
+          const { likes, views } = payload.new;
+          setState({ likes, views });
+        },
+      )
+      .subscribe();
+
+    return () => {
+      channel.unsubscribe();
+    };
+  }, []);
+
   const isLiked = React.useMemo(() => {
     const stringLikes = localStorage.getItem('likes');
     if (stringLikes) {
@@ -68,22 +90,17 @@ const LikeButton = ({ slug, contentType }: LikeButtonProps) => {
   }, []);
 
   return (
-    <Button
-      variant='outline'
-      onClick={likeButtonHandler}
-      className='gap-3 w-fit'
-    >
+    <ShinyButton onClick={likeButtonHandler} className='gap-3 w-fit'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='28'
         height='28'
         viewBox='0 0 24 24'
-        stroke-width='2'
+        strokeWidth='2'
         stroke='#ef4444'
-        className='relative overflow-hidden'
         fill='none'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       >
         <defs>
           <clipPath id='clip-path'>
@@ -91,20 +108,19 @@ const LikeButton = ({ slug, contentType }: LikeButtonProps) => {
           </clipPath>
         </defs>
         <path d='M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572'></path>
-        <g clip-path='url(#clip-path)'>
+        <g clipPath='url(#clip-path)'>
           <rect
             x='0'
-            y={isLiked ? 0 : stage}
+            y={isLiked ? 0 : 20 - stage * 3}
             width='24'
             height='24'
             fill='#ef4444'
-            transform-origin='12px 12px'
           ></rect>
         </g>
       </svg>
       {state.likes}
       <span>Likes</span>
-    </Button>
+    </ShinyButton>
   );
 };
 
