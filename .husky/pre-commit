@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Stash unstaged changes to avoid formatting them
 git stash -q --keep-index
 
