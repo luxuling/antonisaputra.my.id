@@ -1,7 +1,11 @@
+'use client';
+
+import HomeHero from '@/sections/home/hero';
+
 export default function Home() {
   return (
     <main>
-      <h1>Welcome to Antoni Saputra Website</h1>
+      <HomeHero />
     </main>
   );
 }

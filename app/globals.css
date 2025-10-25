@@ -3,22 +3,24 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
+  --background-secondary: #0d0d0d;
+  --accent: #ef000a;
+  --font-dotgothic: var(--font-dotgothic-sans);
+  --font-jetbrain: var(--font-jetbrain-mono);
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background-secondary: var(--background-secondary);
+  --color-accent: var(--accent);
+  --font-dotgothic: var(--font-dotgothic);
+  --font-jetbrain: var(--font-jetbrain);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-jetbrain-mono);
+  font-family: var(--font-jetbrain);
 }
