@@ -11,9 +11,10 @@ import { TextLoop } from '@/components/core/text-loop';
 
 import { SocialLinks } from './components/social-links';
 import CurrentProject from './components/current-project';
+import NeofetchTerminal from './components/neofetch-terminal';
 export default function HomeHero() {
   return (
-    <Container className="relative flex min-h-screen flex-col justify-center gap-10 pt-20">
+    <Container className="relative flex flex-col gap-4 overflow-hidden pt-32 md:justify-center md:overflow-visible md:pb-0">
       <Light className="fixed -top-10 -left-10 -z-3" />
       <CurrentProject />
       <div>
@@ -76,6 +77,7 @@ export default function HomeHero() {
         </Button>
       </div>
       <SocialLinks />
+      <NeofetchTerminal />
     </Container>
   );
 }
