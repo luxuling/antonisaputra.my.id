@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { HTMLAttributeAnchorTarget } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
@@ -28,6 +29,7 @@ interface ButtonProps
   href?: string;
   variant?: VariantProps<typeof buttonVariant>['variant'];
   className?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export default function Button({

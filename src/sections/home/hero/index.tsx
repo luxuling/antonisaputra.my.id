@@ -9,8 +9,8 @@ import { NAVIGATION_PATHS } from '@/lib/config';
 import Typography from '@/components/typography';
 import { TextLoop } from '@/components/core/text-loop';
 
+import { SocialLinks } from './components/social-links';
 import CurrentProject from './components/current-project';
-
 export default function HomeHero() {
   return (
     <Container className="relative flex min-h-screen flex-col justify-center gap-10 pt-20">
@@ -75,6 +75,7 @@ export default function HomeHero() {
           </Button>
         </Button>
       </div>
+      <SocialLinks />
     </Container>
   );
 }

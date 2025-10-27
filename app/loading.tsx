@@ -27,7 +27,7 @@ export default function Loading({ children }: LoadingProps) {
       } else {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000);
+        }, 500);
         clearInterval(interval);
       }
     }, 10);

@@ -6,6 +6,7 @@ export const SITE_CONFIG = {
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL || '',
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
   threadUrl: process.env.NEXT_PUBLIC_THREAD_URL || '',
+  xUrl: process.env.NEXT_PUBLIC_X_URL || '',
 };
 
 export const NAVIGATION_PATHS = {
