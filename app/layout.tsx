@@ -3,10 +3,11 @@ import type { Metadata } from 'next';
 import { JetBrains_Mono, DotGothic16 } from 'next/font/google';
 
 import './globals.css';
+import ClientProvider from '@/components/provider/client-provider';
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '700', '800'],
   variable: '--font-jetbrain-mono',
 });
 
@@ -33,7 +34,9 @@ export default function RootLayout({
       lang="en"
       className={`${jetBrainsMono.variable} ${dotGothic.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <ClientProvider>{children}</ClientProvider>
+      </body>
     </html>
   );
 }

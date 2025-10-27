@@ -10,8 +10,8 @@ const buttonVariant = cva(
   {
     variants: {
       variant: {
-        primary: 'p-3',
-        icon: 'p-1.5',
+        primary: 'py-2 px-3',
+        icon: 'p-2',
       },
     },
     defaultVariants: {

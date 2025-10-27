@@ -23,7 +23,7 @@ const typographyVariants = cva('text-base font-jetbrain', {
 });
 
 interface TypographyProps {
-  children: string;
+  children: React.ReactNode | string;
   variant?: VariantProps<typeof typographyVariants>['variant'];
   color?: VariantProps<typeof typographyVariants>['color'];
   className?: string;
@@ -33,7 +33,14 @@ export default function Typography({
   variant,
   className,
 }: TypographyProps) {
+  if (typeof children === 'string') {
+    <p className={cn(typographyVariants({ variant, className }))}>
+      {children}
+    </p>;
+  }
   return (
-    <p className={cn(typographyVariants({ variant, className }))}>{children}</p>
+    <div className={cn(typographyVariants({ variant, className }))}>
+      {children}
+    </div>
   );
 }
