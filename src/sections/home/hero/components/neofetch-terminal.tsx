@@ -2,9 +2,11 @@ import * as React from 'react';
 
 export default function NeofetchTerminal() {
   return (
-    <div className="from-background-secondary to-background shadow-foreground/5 group absolute top-3/5 -left-40 -z-10 flex h-[500px] w-[900px] rotate-x-45 rotate-z-45 flex-col items-end gap-2 rounded-lg bg-linear-to-b p-7 shadow perspective-dramatic transform-3d md:top-2/5 md:left-8/12 md:z-0 lg:left-7/12">
-      <TerminalHeader />
-      <TerminalContent />
+    <div className="group linear-gradient absolute top-3/5 -left-40 -z-10 rotate-x-45 rotate-z-45 rounded-lg perspective-dramatic transform-3d md:top-2/5 md:left-8/12 md:z-0 lg:left-7/12">
+      <div className="bg-background-secondary border-foreground/5 flex h-[500px] w-[900px] flex-col items-end gap-2 rounded-lg border p-7">
+        <TerminalHeader />
+        <TerminalContent />
+      </div>
     </div>
   );
 }
@@ -60,13 +62,13 @@ ooooo          <oooo>    WM: sway
   }, []);
 
   return (
-    <div className="text-foreground border-foreground/20 bg-background-secondary group-hover:shadow-foreground/25 relative h-full w-full rounded-md p-2 text-sm font-semibold shadow transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:-translate-y-3">
+    <div className="text-foreground bg-background-secondary group-hover:border-foreground/5 border-foreground/0 relative h-full w-full rounded-md border p-2 text-sm font-semibold transition-all duration-300 ease-in-out group-hover:-translate-x-3 group-hover:-translate-y-5">
       <div>
         <p>
-          <span className="text-accent">lixuling@archlinux</span>:{' '}
-          <span className="text-lime-200">neofetch</span>
+          <span className="text-accent brightness-150">lixuling@archlinux</span>
+          : <span className="text-lime-200 brightness-150">neofetch</span>
         </p>
-        <pre className="text-sm font-thin">{displayedText}</pre>
+        <pre className="text-sm font-thin brightness-150">{displayedText}</pre>
       </div>
     </div>
   );

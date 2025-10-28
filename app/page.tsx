@@ -4,7 +4,7 @@ import HomeHero from '@/sections/home/hero';
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <HomeHero />
     </main>
   );
