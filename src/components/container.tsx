@@ -7,7 +7,7 @@ interface ContainerProps {
 export default function Container({ children, className }: ContainerProps) {
   return (
     <section
-      className={cn('mx-auto min-h-screen w-full px-5 md:max-w-5xl', className)}
+      className={cn('mx-auto min-h-svh w-full px-5 md:max-w-5xl', className)}
     >
       {children}
     </section>

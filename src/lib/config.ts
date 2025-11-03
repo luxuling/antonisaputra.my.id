@@ -1,4 +1,5 @@
 export const SITE_CONFIG = {
+  environment: process.env.NEXT_PUBLIC_ENVIRONMENT || 'development',
   phoneNumber: process.env.NEXT_PUBLIC_PHONE_NUMBER || '1234567890',
   whatsappMessage:
     process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||

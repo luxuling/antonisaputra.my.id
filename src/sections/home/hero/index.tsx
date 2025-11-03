@@ -1,6 +1,5 @@
 import { Send, User } from 'lucide-react';
 
-import Light from '@/components/light';
 import Button from '@/components/button';
 import { SITE_CONFIG } from '@/lib/config';
 import { waLinkRedirect } from '@/lib/utils';
@@ -14,8 +13,7 @@ import CurrentProject from './components/current-project';
 import NeofetchTerminal from './components/neofetch-terminal';
 export default function HomeHero() {
   return (
-    <Container className="relative flex flex-col gap-4 overflow-hidden pt-32 md:justify-center md:overflow-visible md:pb-0">
-      <Light className="fixed -top-10 -left-10 -z-3" />
+    <Container className="relative flex flex-col gap-4 pt-32 md:justify-center md:pb-0">
       <CurrentProject />
       <div>
         <Typography variant="h1">

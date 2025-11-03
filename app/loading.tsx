@@ -3,6 +3,8 @@
 import * as React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { SITE_CONFIG } from '@/lib/config';
+
 interface LoadingProps {
   children?: React.ReactNode;
 }
@@ -19,6 +21,10 @@ export default function Loading({ children }: LoadingProps) {
 ╚══════╝╚═╝╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝`;
 
   React.useEffect(() => {
+    if (SITE_CONFIG.environment !== 'production') {
+      setIsLoading(false);
+      return;
+    }
     let currentIndex = 0;
     const interval = setInterval(() => {
       if (currentIndex < asciiArt.length) {

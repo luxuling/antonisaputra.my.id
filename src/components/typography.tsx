@@ -11,6 +11,7 @@ const typographyVariants = cva('text-base font-jetbrain', {
       h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
       base: 'leading-7',
       small: 'text-sm leading-7',
+      'extra-small': 'text-xs leading-7',
     },
     color: {
       default: 'text-foreground',

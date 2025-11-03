@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "my-first-post",
+    "title": "My First Post",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762176431/antonisaputra.my.id/post/example.jpg",
+    "content": "This is the content of my first post.",
+    "description": "An introduction to my blog.",
+    "tags": ["reactjs", "game"],
+    "meta": {
+      "views": 150,
+      "likes": 25,
+      "comments": 5
+    }
+  },
+  {
+    "slug": "learning-javascript",
+    "banner": "https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=765",
+    "title": "Learning JavaScript",
+    "content": "JavaScript is a versatile programming language.",
+    "tags": ["javascript", "programming"],
+    "description": "Getting started with JavaScript.",
+    "meta": {
+      "views": 200,
+      "likes": 40,
+      "comments": 10
+    }
+  },
+  {
+    "slug": "web-development-trends-2024",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762176431/antonisaputra.my.id/post/example.jpg",
+    "title": "Web Development Trends in 2024",
+    "content": "Exploring the latest trends in web development for the year 2024.",
+    "tags": ["webdev", "trends", "2024"],
+    "description": "Stay updated with the latest in web development.",
+    "meta": {
+      "views": 300,
+      "likes": 60,
+      "comments": 15
+    }
+  },
+  {
+    "slug": "css-tips-and-tricks",
+    "banner": "https://images.unsplash.com/photo-1485550409059-9afb054cada4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=765",
+    "title": "CSS Tips and Tricks",
+    "content": "Enhance your web designs with these CSS tips and tricks.",
+    "tags": ["css", "design"],
+    "description": "Improve your CSS skills with practical tips.",
+    "meta": {
+      "views": 180,
+      "likes": 30,
+      "comments": 8
+    }
+  }
+]

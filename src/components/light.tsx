@@ -1,16 +1,126 @@
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
+import {
+  motion,
+  SpringOptions,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+  Transition,
+  Variant,
+} from 'motion/react';
+
 import { cn } from '@/lib/utils';
 
-interface LightProps {
+export type CursorProps = {
+  children: React.ReactNode;
   className?: string;
-}
+  springConfig?: SpringOptions;
+  attachToParent?: boolean;
+  transition?: Transition;
+  variants?: {
+    initial: Variant;
+    animate: Variant;
+    exit: Variant;
+  };
+  onPositionChange?: (x: number, y: number) => void;
+};
 
-export default function Light({ className }: LightProps) {
+export function Cursor({
+  children,
+  className,
+  springConfig,
+  attachToParent,
+  variants,
+  transition,
+  onPositionChange,
+}: CursorProps) {
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(!attachToParent);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      cursorX.set(window.innerWidth / 2);
+      cursorY.set(window.innerHeight / 2);
+    }
+  }, []);
+
+  useEffect(() => {
+    const updatePosition = (e: MouseEvent) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      onPositionChange?.(e.clientX, e.clientY);
+    };
+
+    document.addEventListener('mousemove', updatePosition);
+
+    return () => {
+      document.removeEventListener('mousemove', updatePosition);
+    };
+  }, [cursorX, cursorY, onPositionChange]);
+
+  const cursorXSpring = useSpring(cursorX, springConfig || { duration: 0 });
+  const cursorYSpring = useSpring(cursorY, springConfig || { duration: 0 });
+
+  useEffect(() => {
+    const handleVisibilityChange = (visible: boolean) => {
+      setIsVisible(visible);
+    };
+
+    if (attachToParent && cursorRef.current) {
+      const parent = cursorRef.current.parentElement;
+      if (parent) {
+        parent.addEventListener('mouseenter', () => {
+          handleVisibilityChange(true);
+        });
+        parent.addEventListener('mouseleave', () => {
+          handleVisibilityChange(false);
+        });
+      }
+    }
+
+    return () => {
+      if (attachToParent && cursorRef.current) {
+        const parent = cursorRef.current.parentElement;
+        if (parent) {
+          parent.removeEventListener('mouseenter', () => {
+            handleVisibilityChange(true);
+          });
+          parent.removeEventListener('mouseleave', () => {
+            handleVisibilityChange(false);
+          });
+        }
+      }
+    };
+  }, [attachToParent]);
+
   return (
-    <span
-      className={cn(
-        'bg-accent/[2%] block h-96 w-96 rounded-full blur-3xl brightness-150 backdrop-blur-3xl',
-        className
-      )}
-    />
+    <motion.div
+      ref={cursorRef}
+      className={cn('fixed top-0 left-0 -z-10', className)}
+      style={{
+        x: cursorXSpring,
+        y: cursorYSpring,
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+    >
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={variants}
+            transition={transition}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
