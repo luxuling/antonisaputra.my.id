@@ -1,6 +1,6 @@
 'use client';
 
-import { Cursor } from '../light';
+import { Cursor } from '../cursor';
 
 interface ClientProviderProps {
   children?: React.ReactNode;

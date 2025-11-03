@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useState, useRef } from 'react';
 import {
   motion,
@@ -46,6 +44,7 @@ export function Cursor({
       cursorX.set(window.innerWidth / 2);
       cursorY.set(window.innerHeight / 2);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -84,6 +83,7 @@ export function Cursor({
 
     return () => {
       if (attachToParent && cursorRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         const parent = cursorRef.current.parentElement;
         if (parent) {
           parent.removeEventListener('mouseenter', () => {
