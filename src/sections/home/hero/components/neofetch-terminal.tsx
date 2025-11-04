@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export default function NeofetchTerminal() {
   return (
-    <div className="group linear-gradient absolute top-3/5 -left-40 -z-10 rotate-x-45 rotate-z-45 rounded-lg perspective-dramatic transform-3d md:top-2/5 md:left-8/12 md:z-0 lg:left-7/12">
+    <div className="group linear-gradient absolute top-5/5 -left-40 -z-10 rotate-x-45 rotate-z-45 rounded-lg perspective-dramatic transform-3d md:top-2/5 md:left-8/12 md:z-0 lg:left-7/12">
       <div className="bg-background-secondary border-foreground/5 flex h-[500px] w-[900px] flex-col items-end gap-2 rounded-lg border p-7">
         <TerminalHeader />
         <TerminalContent />

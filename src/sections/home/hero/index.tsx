@@ -13,7 +13,7 @@ import CurrentProject from './components/current-project';
 import NeofetchTerminal from './components/neofetch-terminal';
 export default function HomeHero() {
   return (
-    <Container className="relative flex flex-col gap-4 pt-32 md:justify-center md:pb-0">
+    <Container className="relative flex flex-col gap-4 md:justify-center md:pb-0">
       <CurrentProject />
       <div>
         <Typography variant="h1">

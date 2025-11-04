@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "portfolio-website",
+    "title": "Portfolio Website",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762248303/antonisaputra.my.id/project/e70c5aeeefc38bcc32c20201f6f5998b_iwgui1.jpg",
+    "description": "A modern, responsive portfolio website built with Next.js and TypeScript",
+    "githubUrl": "https://github.com/username/portfolio-website",
+    "liveUrl": "https://myportfolio.vercel.app",
+    "meta": {
+      "views": 1200,
+      "likes": 85,
+      "comments": 12
+    }
+  },
+  {
+    "slug": "task-management-app",
+    "title": "Task Management App",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762248303/antonisaputra.my.id/project/e70c5aeeefc38bcc32c20201f6f5998b_iwgui1.jpg",
+    "description": "A full-stack task management application with real-time updates and team collaboration features",
+    "githubUrl": "https://github.com/username/task-manager",
+    "liveUrl": "https://taskapp.netlify.app",
+    "meta": {
+      "views": 950,
+      "likes": 67,
+      "comments": 8
+    }
+  },
+  {
+    "slug": "e-commerce-platform",
+    "title": "E-Commerce Platform",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762248303/antonisaputra.my.id/project/e70c5aeeefc38bcc32c20201f6f5998b_iwgui1.jpg",
+    "description": "A complete e-commerce solution with payment integration and admin dashboard",
+    "githubUrl": "https://github.com/username/ecommerce-platform",
+    "meta": {
+      "views": 1500,
+      "likes": 112,
+      "comments": 25
+    }
+  },
+  {
+    "slug": "weather-dashboard",
+    "title": "Weather Dashboard",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762248303/antonisaputra.my.id/project/e70c5aeeefc38bcc32c20201f6f5998b_iwgui1.jpg",
+    "description": "Real-time weather forecasting application with location-based services and interactive maps",
+    "githubUrl": "https://github.com/username/weather-dashboard",
+    "liveUrl": "https://weather-dash.herokuapp.com",
+    "meta": {
+      "views": 680,
+      "likes": 45,
+      "comments": 6
+    }
+  },
+  {
+    "slug": "ai-chatbot",
+    "title": "AI-Powered Chatbot",
+    "banner": "https://res.cloudinary.com/lixuling/image/upload/v1762248303/antonisaputra.my.id/project/e70c5aeeefc38bcc32c20201f6f5998b_iwgui1.jpg",
+    "description": "An intelligent chatbot using natural language processing and machine learning algorithms",
+    "githubUrl": "https://github.com/username/ai-chatbot",
+    "meta": {
+      "views": 2100,
+      "likes": 156,
+      "comments": 32
+    }
+  }
+]

@@ -13,6 +13,7 @@ const buttonVariant = cva(
       variant: {
         primary: 'py-2 px-3',
         icon: 'p-2',
+        link: 'border-0 bg-transparent hover:bg-transparent underline-offset-4 underline',
       },
     },
     defaultVariants: {
@@ -47,7 +48,9 @@ export default function Button({
         className={cn(buttonVariant({ variant, className }))}
         {...props}
       >
-        <Spotlight size={40} className="bg-foreground" />
+        {variant !== 'link' && (
+          <Spotlight size={40} className="bg-foreground" />
+        )}
         {children}
       </Link>
     );

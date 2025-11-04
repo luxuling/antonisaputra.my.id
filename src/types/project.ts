@@ -1,11 +1,11 @@
 import { ContentMetadata } from '.';
 
-export interface Post {
+export interface Project {
   slug: string;
   title: string;
   banner: string;
   description: string;
-  tags: string[];
-  content: string;
+  githubUrl: string;
+  liveUrl?: string;
   meta: ContentMetadata;
 }

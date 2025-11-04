@@ -1,6 +1,7 @@
 'use client';
 
 import { Cursor } from '../cursor';
+import Loading from '../../../app/loading';
 
 interface ClientProviderProps {
   children?: React.ReactNode;
@@ -26,8 +27,7 @@ export default function ClientProvider({ children }: ClientProviderProps) {
       >
         <span className="bg-accent/5 block h-96 w-96 rounded-full blur-3xl brightness-150" />
       </Cursor>
-      {/* <Loading>{children}</Loading> */}
-      {children}
+      <Loading>{children}</Loading>
     </>
   );
 }

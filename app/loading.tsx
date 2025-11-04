@@ -70,6 +70,7 @@ export default function Loading({ children }: LoadingProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
+            className="scale-50 md:scale-100"
           >
             {displayedText}
           </motion.pre>

@@ -5,10 +5,10 @@ import { cn } from '@/lib/utils';
 const typographyVariants = cva('text-base font-jetbrain', {
   variants: {
     variant: {
-      h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight text-balance',
-      h2: 'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0',
-      h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
-      h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
+      h1: 'scroll-m-20 text-2xl md:text-4xl font-extrabold tracking-tight text-balance',
+      h2: 'scroll-m-20 text-xl md:text-3xl font-semibold tracking-tight',
+      h3: 'scroll-m-20 text-lg md:text-2xl font-semibold tracking-tight',
+      h4: 'scroll-m-20 text-base md:text-xl font-semibold tracking-tight',
       base: 'leading-7',
       small: 'text-sm leading-7',
       'extra-small': 'text-xs leading-7',
