@@ -53,7 +53,7 @@ export default function HomeHero() {
         </Typography>
         <Typography color="muted" className="mt-4 max-w-lg">
           A Software Engineer who loves Linux & Open Source, like to build some
-          fun projects, and always learning new things.
+          fun projects, and like learning new things.
         </Typography>
       </div>
       <div className="flex gap-3">

@@ -17,7 +17,7 @@ export default function RecentPost() {
       <div className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2">
         <For
           data={posts}
-          render={(post) => <PostCard post={post} className="w-full" />}
+          render={(post) => <PostCard post={post} className="h-full w-full" />}
         />
       </div>
     </Container>

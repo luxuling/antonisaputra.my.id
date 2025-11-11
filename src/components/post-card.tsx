@@ -13,7 +13,7 @@ interface PostCardProps {
 
 export default function PostCard({ post, className }: PostCardProps) {
   return (
-    <Card className={cn('flex flex-col', className)}>
+    <Card className={cn('flex h-full flex-col', className)}>
       <CardBanner src={post.banner} alt={post.title} />
       <CardTitle className="mt-2">{post.title}</CardTitle>
       <CardDescription>{post.description}</CardDescription>

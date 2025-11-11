@@ -25,22 +25,22 @@ const TerminalContent = () => {
   const [displayedText, setDisplayedText] = React.useState('');
 
   const neofetchOutput = `
-          A             
-         ooo           ┌──────────────────────────────────────┐ 
-        ooooo            OS: Arch Linux 
-       ooooooo           Host: MS-7C95 1.0 
-      ooooooooo          Kernel: 6.14.6-arch1-1 
-     ooooo ooooo         Uptime: 7 hours, 2 mins 
-    ooooo   ooooo        Packages: 1005 (pacman), 5 (flatpak) 
-   ooooo     ooooo       Shell: zsh 5.9 
-  ooooo  <oooooooo>      Resolution: 1920x1080 
- ooooo      <oooooo>     DE: Hyprland 
-ooooo          <oooo>    WM: sway 
-                         Terminal: kitty 
-                         CPU: AMD Ryzen 5 5600G with Radeon Graphics (12) @ 4.465GHz 
-                         GPU: AMD ATI Radeon Vega Series / Radeon Vega Mobile Series 
-                         Memory: 9689MiB / 13860MiB 
-                       └──────────────────────────────────────┘ 
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⠀⠀⠀⠈⠉⠙⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠐⠁⠀⢀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿      lixuling@archlinux
+⣿⣿⣿⣿⣿⣿⡿⠃⠂⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⢀⠀⠀⠈⢿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿      distribution    •  Arch Linux x86_64
+⣿⣿⢿⣿⠟⠃⠀⠀⠀⠀⡈⠄⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⢻⣿⣿⣿⣿      linux kernel    •  Linux 6.14.6-arch1-1
+⣿⣿⣷⡶⠂⠀⠀⠀⢀⠀⠷⠀⣷⠀⢇⠀⠀⡄⠀⠀⠀⠀⠀⠀⠀⢸⣿⠡⠖⢸      packages        •  1031 (pacman)
+⣿⣿⣿⣧⠀⠄⠀⠀⢈⣡⣄⣩⣿⣿⣾⡷⠄⢊⡀⠀⠀⠀⠀⠀⠠⡮⢹⣷⣾⣿      unix shell      •  zsh 5.9
+⣿⣿⣿⣿⡄⠀⠀⠀⠊⢭⣿⣿⣷⣶⣿⣿⣶⡦⠀⠀⠀⠀⠀⠀⠎⢈⠢⣂⢿⣿      terminal        •  tmux 3.5a
+⣿⣿⣿⠟⠀⠀⠀⠀⠙⢿⣿⣷⣿⣾⣭⣿⣿⡥⠍⠂⠀⠀⠀⠀⠀⠀⣬⣶⣿⣿      window manager  •  Hyprland (Wayland)
+⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠟⠛⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿
+⣿⣿⡇⠁⠀⠀⠀⡀⣶⣶⣶⣶⠂⢀⣠⣴⡆⢄⣤⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿      ● ● ● ● ● ● ● ●
+⣿⣿⠋⠀⠀⠀⠤⡦⢍⣿⣿⡇⣔⡻⠿⠿⣱⣿⡏⠀⠀⠀⠀⠐⠀⠀⠀⠀⠹⣿
+⡿⠁⠀⠀⠀⠀⠈⠈⢸⡿⣿⢯⣛⣛⢛⣼⣿⣿⠁⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠹
+⡁⠀⠀⠀⣠⠂⠀⠐⡠⠎⢸⢸⣿⣏⣾⣿⡿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⣄⠀⡀⠀⠀⢠⠀⠀⠀⠹⣸⡿⣼⠟⠉⠔⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀
   `;
 
   React.useEffect(() => {
@@ -66,9 +66,11 @@ ooooo          <oooo>    WM: sway
       <div>
         <p>
           <span className="text-accent brightness-150">lixuling@archlinux</span>
-          : <span className="text-lime-200 brightness-150">neofetch</span>
+          : <span className="text-lime-200 brightness-150">fastfetch</span>
         </p>
-        <pre className="text-sm font-thin brightness-150">{displayedText}</pre>
+        <pre className="text-sm leading-4 font-thin brightness-150">
+          {displayedText}
+        </pre>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export default function RecentProject() {
         <For
           data={projects}
           render={(project) => (
-            <ProjectCard project={project} className="w-full" />
+            <ProjectCard project={project} className="h-full w-full" />
           )}
         />
       </div>
