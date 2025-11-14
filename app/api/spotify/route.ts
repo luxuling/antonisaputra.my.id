@@ -40,11 +40,18 @@ const getNowPlaying = async () => {
   try {
     const { access_token } = await getAccessToken();
 
-    return await fetch(NOW_PLAYING_ENDPOINT, {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+    const response = await fetch(NOW_PLAYING_ENDPOINT, {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      signal: controller.signal,
     });
+
+    clearTimeout(timeoutId);
+    return response;
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error in getNowPlaying:', error);
