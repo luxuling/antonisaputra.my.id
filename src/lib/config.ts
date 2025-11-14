@@ -9,6 +9,9 @@ export const SITE_CONFIG = {
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
   threadUrl: process.env.NEXT_PUBLIC_THREAD_URL || '',
   xUrl: process.env.NEXT_PUBLIC_X_URL || '',
+  spotifyClientId: process.env.SPOTIFY_CLIENT_ID || '',
+  spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
+  spotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN || '',
 };
 
 export const NAVIGATION_PATHS = {

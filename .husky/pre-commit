@@ -1,15 +1,2 @@
-# Stash unstaged changes to avoid formatting them
-git stash -q --keep-index
-
 # Run lint and fix
 pnpm run lint --fix
-
-# Get staged files that need formatting
-files=$(git diff --cached --name-only --diff-filter=ACMR "*.js" "*.jsx" "*.ts" "*.tsx" "*.json" "*.css" "*.scss" "*.html" "*.md" "*.yml" "*.yaml")
-
-if [ -n "$files" ]; then
-    echo "$files" | xargs prettier --ignore-unknown --write
-    echo "$files" | xargs git add
-fi
-
-git update-index --again

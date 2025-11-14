@@ -161,8 +161,9 @@ const RetroEffect = forwardRef<
 >((props, ref) => {
   const { colorNum, pixelSize } = props;
   const WrappedRetroEffect = wrapEffect(RetroEffectImpl);
-  // eslint-disable-next-line react-hooks/static-components
+   
   return (
+    // eslint-disable-next-line react-hooks/static-components
     <WrappedRetroEffect ref={ref} colorNum={colorNum} pixelSize={pixelSize} />
   );
 });
