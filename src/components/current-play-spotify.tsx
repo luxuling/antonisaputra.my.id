@@ -2,10 +2,10 @@
 
 import useSWR from 'swr';
 import Link from 'next/link';
-import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 import SpotifyIcon from '@/components/icons/spotify-icon';
+
 import LazyImage from './lazy-image';
 
 interface IData {
