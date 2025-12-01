@@ -10,7 +10,7 @@ export default function Tag({ text, ...props }: TagProps) {
   return (
     <div
       className={cn(
-        'bg-foreground/[3%] border-foreground/10 w-fit rounded-xl border px-2 py-[1px] hover:underline',
+        'bg-foreground/[3%] border-foreground/10 w-fit rounded-full border px-2 py-[1px] hover:underline text-foreground/60',
         props.onClick ? 'cursor-pointer' : 'cursor-default'
       )}
       {...props}

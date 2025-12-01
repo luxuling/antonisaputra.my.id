@@ -12,7 +12,7 @@ const buttonVariant = cva(
     variants: {
       variant: {
         primary: 'py-2 px-3',
-        icon: 'p-2',
+        icon: 'p-2 rounded-md',
         link: 'border-0 bg-transparent hover:bg-transparent underline-offset-4 underline',
       },
     },

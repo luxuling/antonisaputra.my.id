@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 import SpotifyIcon from '@/components/icons/spotify-icon';
+import LazyImage from './lazy-image';
 
 interface IData {
   album: string;
@@ -31,15 +32,13 @@ export default function SpotifyNowPlaying() {
           : 'https://open.spotify.com/user/31rn7zt33qzljgvqmiklfkcaxcle'
       }
       className={cn(
-        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group relative flex w-fit items-center gap-2 rounded-xl border p-2 backdrop-blur-sm transition-colors'
+        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group relative flex w-fit scale-100 items-center gap-2 rounded-xl border p-2 backdrop-blur-sm transition-colors'
       )}
     >
-      <div>
+      <div className="relative h-8 w-8 scale-100 overflow-hidden rounded-md">
         {data?.isPlaying ? (
-          <Image
-            width={200}
-            height={200}
-            className="h-8 w-8 rounded-md"
+          <LazyImage
+            className="h-full w-full"
             src={data?.albumImageUrl}
             alt={data?.album}
           />

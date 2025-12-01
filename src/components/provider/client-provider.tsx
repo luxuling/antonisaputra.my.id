@@ -1,5 +1,7 @@
 'use client';
 
+import { Toaster } from 'sonner';
+
 import { Cursor } from '../cursor';
 import Loading from '../../../app/loading';
 
@@ -10,6 +12,13 @@ interface ClientProviderProps {
 export default function ClientProvider({ children }: ClientProviderProps) {
   return (
     <>
+      <Toaster
+        position="top-right"
+        expand={true}
+        toastOptions={{
+          className: '!bg-background/10 !text-white !py-2 !px-3 !w-fit',
+        }}
+      />
       <Cursor
         variants={{
           initial: { height: 0, opacity: 0, scale: 0.3 },

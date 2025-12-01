@@ -1,11 +1,8 @@
-import { ContentMetadata } from '.';
+import { Metadata, ContentAnalytic } from '.';
 
 export interface Project {
   slug: string;
-  title: string;
-  banner: string;
-  description: string;
-  githubUrl: string;
-  liveUrl?: string;
-  meta: ContentMetadata;
+  metadata: Metadata;
+  content: React.FC;
+  analytic: ContentAnalytic;
 }

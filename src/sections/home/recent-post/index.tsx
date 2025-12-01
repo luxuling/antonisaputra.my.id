@@ -1,11 +1,17 @@
+'use client';
+
+import { Post } from '@/types/post';
 import For from '@/components/core/for';
-import posts from '@/lib/mock/post.json';
 import Button from '@/components/button';
-import PostCard from '@/components/post-card';
 import Container from '@/components/container';
 import Typography from '@/components/typography';
+import ContentCard from '@/components/content-card';
 
-export default function RecentPost() {
+export default function RecentPost({
+  posts,
+}: {
+  posts: Omit<Post, 'content'>[];
+}) {
   return (
     <Container>
       <div className="flex flex-col items-center justify-between md:flex-row">
@@ -17,7 +23,13 @@ export default function RecentPost() {
       <div className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2">
         <For
           data={posts}
-          render={(post) => <PostCard post={post} className="h-full w-full" />}
+          render={(post) => (
+            <ContentCard
+              content={post}
+              className="h-full w-full"
+              showActions={false}
+            />
+          )}
         />
       </div>
     </Container>

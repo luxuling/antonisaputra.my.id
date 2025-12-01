@@ -1,11 +1,8 @@
-import { ContentMetadata } from '.';
+import { Metadata, ContentAnalytic } from '.';
 
-export interface Post {
+export interface Post  {
   slug: string;
-  title: string;
-  banner: string;
-  description: string;
-  tags: string[];
-  content: string;
-  meta: ContentMetadata;
+  metadata: Metadata
+  content: React.FC
+  analytic: ContentAnalytic;
 }

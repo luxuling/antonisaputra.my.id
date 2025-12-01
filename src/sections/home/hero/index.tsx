@@ -1,3 +1,5 @@
+'use client'
+
 import { Send, User } from 'lucide-react';
 
 import Button from '@/components/button';

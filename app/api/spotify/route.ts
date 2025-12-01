@@ -64,6 +64,7 @@ const getNowPlaying = async (): Promise<Response> => {
 
 export async function GET() {
   const response = await getNowPlaying();
+  if(!response) return
   const spotifyData: SpotifyData = await response.json();
 
   if (

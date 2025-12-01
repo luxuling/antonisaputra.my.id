@@ -11,7 +11,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group group-hover:border-foreground/50 group h-fit w-fit border-1 border-dotted p-4 backdrop-blur-sm transition-colors',
+        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group group-hover:border-foreground/50 group h-fit w-fit border-1 border-dotted p-4 backdrop-blur-sm transition-colors rounded-md',
         className
       )}
       {...props}
@@ -55,7 +55,7 @@ export function CardBanner({
   return (
     <div
       className={cn(
-        'h-20 w-full scale-100 overflow-hidden rounded-md transition-transform group-hover:scale-105',
+        'h-20 w-full overflow-hidden rounded-md transition-transform group-hover:scale-105 flex justify-center items-center',
         className
       )}
     >

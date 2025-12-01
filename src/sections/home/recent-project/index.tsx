@@ -1,11 +1,17 @@
+'use client';
+
 import For from '@/components/core/for';
 import Button from '@/components/button';
-import projects from '@/lib/mock/project.json';
+import { Project } from '@/types/project';
 import Container from '@/components/container';
 import Typography from '@/components/typography';
-import ProjectCard from '@/components/project-card';
+import ContentCard from '@/components/content-card';
 
-export default function RecentProject() {
+export default function RecentProject({
+  projects,
+}: {
+  projects: Omit<Project, 'content'>[];
+}) {
   return (
     <Container>
       <div className="flex flex-col items-center justify-between md:flex-row">
@@ -18,7 +24,7 @@ export default function RecentProject() {
         <For
           data={projects}
           render={(project) => (
-            <ProjectCard project={project} className="h-full w-full" />
+            <ContentCard content={project} className="h-full w-full" />
           )}
         />
       </div>
