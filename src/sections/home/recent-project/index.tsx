@@ -2,21 +2,17 @@
 
 import For from '@/components/core/for';
 import Button from '@/components/button';
-import { Project } from '@/types/project';
+import { ProjectList } from '@/types/project';
 import Container from '@/components/container';
 import Typography from '@/components/typography';
 import ContentCard from '@/components/content-card';
 
-export default function RecentProject({
-  projects,
-}: {
-  projects: Omit<Project, 'content'>[];
-}) {
+export default function RecentProject({ projects }: { projects: ProjectList }) {
   return (
     <Container>
       <div className="flex flex-col items-center justify-between md:flex-row">
         <Typography variant="h1">Recent Project</Typography>
-        <Button variant="link" href="/posts" className="mt-2">
+        <Button variant="link" href="/projects" className="mt-2">
           <Typography variant="base">View all projects</Typography>
         </Button>
       </div>

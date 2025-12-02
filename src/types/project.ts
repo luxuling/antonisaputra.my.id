@@ -6,3 +6,5 @@ export interface Project {
   content: React.FC;
   analytic: ContentAnalytic;
 }
+
+export type ProjectList = Omit<Project, 'content'>[]

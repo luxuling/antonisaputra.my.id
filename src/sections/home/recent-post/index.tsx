@@ -1,7 +1,7 @@
 'use client';
 
-import { Post } from '@/types/post';
 import For from '@/components/core/for';
+import { PostList } from '@/types/post';
 import Button from '@/components/button';
 import Container from '@/components/container';
 import Typography from '@/components/typography';
@@ -10,7 +10,7 @@ import ContentCard from '@/components/content-card';
 export default function RecentPost({
   posts,
 }: {
-  posts: Omit<Post, 'content'>[];
+  posts: PostList;
 }) {
   return (
     <Container>

@@ -4,7 +4,6 @@ import { toast } from 'sonner';
 import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/utils';
-import { useBoolean } from '@/hooks/use-boolean';
 
 export interface LazyImageProps {
   src: string;
@@ -13,8 +12,7 @@ export interface LazyImageProps {
 }
 
 export default function LazyImage({ src, alt, className }: LazyImageProps) {
-  const [isLoaded, { setTrue }] = useBoolean(false);
-  const [blurDataURL, setBlurDataURL] = useState<string>('');
+  const [blurDataURL, setBlurDataURL] = useState<null>(null);
 
   useEffect(() => {
     const fetchBlurData = async () => {
@@ -36,23 +34,20 @@ export default function LazyImage({ src, alt, className }: LazyImageProps) {
     fetchBlurData();
   }, [src]);
 
-  return (
+  return blurDataURL ? (
     <Image
       src={src}
       alt={alt}
       width={0}
       height={0}
-      sizes="100vw"
-      onLoad={() => setTrue()}
+      sizes='100vh'
       loading="lazy"
-      placeholder={blurDataURL ? 'blur' : 'empty'}
-      blurDataURL={blurDataURL || undefined}
-      className={cn(
-        'h-auto w-full object-contain transition-all duration-500',
-        isLoaded ? 'blur-0 scale-100' : 'scale-105 blur-sm',
-        className
-      )}
+      placeholder="blur"
+      blurDataURL={blurDataURL}
+      className={cn('h-auto w-full object-contain duration-500', className)}
       quality={100}
     />
+  ) : (
+    ''
   );
 }

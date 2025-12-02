@@ -1,8 +1,8 @@
 import path from 'node:path';
 import fs from 'node:fs/promises';
 
-import { Post } from '@/types/post';
-import { Project } from '@/types/project';
+import { Post, PostList } from '@/types/post';
+import { Project, ProjectList } from '@/types/project';
 
 export const getPostBySlug = async (slug: string): Promise<Post> => {
   const post = await import(`@/data/posts/${slug}.mdx`);
@@ -22,7 +22,7 @@ export const getPostBySlug = async (slug: string): Promise<Post> => {
   };
 };
 
-export const getPostList = async (): Promise<Omit<Post, 'content'>[]> => {
+export const getPostList = async (): Promise<PostList> => {
   const files = await fs.readdir(path.join(process.cwd(), 'src/data/posts'));
 
   return Promise.all(
@@ -63,7 +63,7 @@ export const getProjectBySlug = async (slug: string): Promise<Project> => {
   };
 };
 
-export const getProjectList = async (): Promise<Omit<Project, 'content'>[]> => {
+export const getProjectList = async (): Promise<ProjectList> => {
   const files = await fs.readdir(path.join(process.cwd(), 'src/data/projects'));
 
   return Promise.all(

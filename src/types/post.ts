@@ -6,3 +6,5 @@ export interface Post  {
   content: React.FC
   analytic: ContentAnalytic;
 }
+
+export type PostList = Omit<Post, 'content'>[]

@@ -1,31 +1,54 @@
 import sharp from 'sharp';
 import { NextRequest, NextResponse } from 'next/server';
 
+function bufferToBase64(buffer: Buffer): string {
+  return `data:image/png;base64,${buffer.toString('base64')}`;
+}
+
+async function getBuffer(url: string) {
+  try {
+    const response = await fetch(url);
+    return Buffer.from(await response.arrayBuffer());
+  } catch {
+    throw new Error('Failed to fetch');
+  }
+}
+
+export async function getPlaceholderImage(url: string) {
+  try {
+    const lowResImage = await getBuffer(
+      `${process.env.NEXT_URL}_next/image?url=${encodeURIComponent(
+        url
+      )}&w=48&q=50`
+    );
+    if (lowResImage) {
+      const resizedBuffer = await sharp(lowResImage).resize(20).toBuffer();
+      return bufferToBase64(resizedBuffer);
+    }
+  } catch {
+    throw new Error('Failed get placeholder');
+  }
+}
+
 export async function GET(request: NextRequest) {
   const imageUrl = request.nextUrl.searchParams.get('url');
 
   if (!imageUrl) {
-    return NextResponse.json({ error: 'URL required' }, { status: 400 });
+    return NextResponse.json(
+      { message: 'URL required', error: null },
+      { status: 400 }
+    );
   }
 
   try {
-    const response = await fetch(imageUrl);
-    const buffer = await response.arrayBuffer();
-
-    const blurredBuffer = await sharp(Buffer.from(buffer))
-      .resize(10, 10, { fit: 'inside' })
-      .blur()
-      .toBuffer();
-
-    const base64 = blurredBuffer.toString('base64');
-
+    const url = await getPlaceholderImage(imageUrl);
     return NextResponse.json({
-      blurDataURL: `data:image/jpeg;base64,${base64}`,
+      blurDataURL: url,
     });
-  } catch (error) {
-    return NextResponse.json(
-      { message: 'Failed to process image blur', error },
-      { status: 500 }
-    );
+  } catch {
+    return NextResponse.json({
+      blurDataURL:
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOsa2yqBwAFCAICLICSyQAAAABJRU5ErkJggg==',
+    });
   }
 }

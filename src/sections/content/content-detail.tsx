@@ -31,7 +31,7 @@ export default function ContentDetail({
         {contentMetadata.metadata.title}
       </Typography>
 
-      <div className="h-[300px] bg-white w-full flex justify-center items-center overflow-hidden rounded-md">
+      <div className="h-[300px] w-full flex justify-center items-center overflow-hidden rounded-md">
         <LazyImage
           src={contentMetadata.metadata.banner}
           alt={contentMetadata.metadata.title}
