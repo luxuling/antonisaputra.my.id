@@ -11,7 +11,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group group-hover:border-foreground/50 group h-fit w-fit border-1 border-dotted p-4 backdrop-blur-sm transition-colors rounded-md',
+        'bg-foreground/[3%] border-foreground/10 hover:border-foreground/50 group group-hover:border-foreground/50 h-fit w-fit border-1 border-dotted p-4 backdrop-blur-sm transition-colors rounded-md',
         className
       )}
       {...props}

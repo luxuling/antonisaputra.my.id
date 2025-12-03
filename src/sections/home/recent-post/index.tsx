@@ -1,32 +1,44 @@
 'use client';
 
+import { ArrowUpRight } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
 import For from '@/components/core/for';
 import { PostList } from '@/types/post';
 import Button from '@/components/button';
 import Container from '@/components/container';
+import { NAVIGATION_PATHS } from '@/lib/config';
 import Typography from '@/components/typography';
 import ContentCard from '@/components/content-card';
 
-export default function RecentPost({
-  posts,
-}: {
-  posts: PostList;
-}) {
+export default function RecentPost({ posts }: { posts: PostList }) {
   return (
     <Container>
-      <div className="flex flex-col items-center justify-between md:flex-row">
+      <div className="flex flex-col items-center gap-3">
         <Typography variant="h1">Recent Posts</Typography>
-        <Button variant="link" href="/posts" className="mt-2">
-          <Typography variant="base">View all posts</Typography>
+        <Typography>What’s On My Mind: Coding and Everything Else.</Typography>
+        <Button href={NAVIGATION_PATHS.posts.root}>
+          <Typography variant="base">See All</Typography>
+          <ArrowUpRight />
         </Button>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2">
+      <div
+        className={cn(
+          'mt-6 w-full',
+          posts.length > 1
+            ? 'mt-6 grid grid-cols-1 gap-2 md:grid-cols-2'
+            : 'flex items-center justify-center'
+        )}
+      >
         <For
           data={posts}
           render={(post) => (
             <ContentCard
               content={post}
-              className="h-full w-full"
+              className={cn(
+                'h-full',
+                posts.length > 1 ? 'w-full' : 'w-fit max-w-md'
+              )}
               showActions={false}
             />
           )}

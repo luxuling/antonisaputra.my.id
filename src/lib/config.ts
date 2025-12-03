@@ -14,16 +14,23 @@ export const SITE_CONFIG = {
   spotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN || '',
 };
 
+const genericPath = (url: string) => {
+  return {
+    root: url,
+    detail: (slug: string) => `${url}/${slug}`,
+  };
+};
+
 export const NAVIGATION_PATHS = {
   home: '/',
-  post: '/post',
-  project: '/project',
+  posts: genericPath('/posts'),
+  projects: genericPath('/projects'),
   about: '/about',
 };
 
 export const NAVIGATION_LINKS = [
   { label: 'Home', href: NAVIGATION_PATHS.home },
-  { label: 'Posts', href: NAVIGATION_PATHS.post },
+  { label: 'Posts', href: NAVIGATION_PATHS.posts.root },
   { label: 'Projects', href: NAVIGATION_PATHS.project },
   { label: 'About Me', href: NAVIGATION_PATHS.about },
 ];

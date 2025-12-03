@@ -19,7 +19,7 @@ interface IData {
 export default function SpotifyNowPlaying() {
   const fetcher = (url: string) => fetch(url).then((r) => r.json());
   const { data }: { data: IData } = useSWR('/api/spotify', fetcher, {
-    refreshInterval: 10000, // Refresh every 10 seconds
+    refreshInterval: 10000, // Refresh every 1 minutes
     revalidateOnFocus: true,
   });
   return (

@@ -1,4 +1,4 @@
-import { Eye, Heart, MessageCircleDashed } from 'lucide-react';
+import { Eye, MessageCircleDashed, Rose } from 'lucide-react';
 
 const Views = ({ count }: { count: number }) => {
   return (
@@ -12,8 +12,8 @@ const Views = ({ count }: { count: number }) => {
 const Likes = ({ count }: { count: number }) => {
   return (
     <div className="text-foreground/70 mt-2 flex items-center gap-1 text-sm">
-      <Heart className="h-4 w-4" />
-      <span>{count} likes</span>
+      <Rose className="h-4 w-4" />
+      <span>{count} roses</span>
     </div>
   );
 };
