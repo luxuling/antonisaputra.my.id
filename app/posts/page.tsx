@@ -14,5 +14,11 @@ export default async function PostListPage() {
     notFound();
   }
 
-  return <ContentList list={posts} title="List Post" subtitle="lorem" />;
+  return (
+    <ContentList
+      list={posts}
+      title="List Post"
+      subtitle="What’s On My Mind: Coding and Everything Else."
+    />
+  );
 }

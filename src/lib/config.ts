@@ -7,8 +7,7 @@ export const SITE_CONFIG = {
     'Hello, I would like to get in touch with you.',
   githubUrl: process.env.NEXT_PUBLIC_GITHUB_URL || '',
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
-  threadUrl: process.env.NEXT_PUBLIC_THREAD_URL || '',
-  xUrl: process.env.NEXT_PUBLIC_X_URL || '',
+  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || '',
   spotifyClientId: process.env.SPOTIFY_CLIENT_ID || '',
   spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET || '',
   spotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN || '',
@@ -25,12 +24,8 @@ export const NAVIGATION_PATHS = {
   home: '/',
   posts: genericPath('/posts'),
   projects: genericPath('/projects'),
-  about: '/about',
+  me: '/me',
+  guestbook: '/guestbook',
+  tools: '/tools',
+  request: '/request',
 };
-
-export const NAVIGATION_LINKS = [
-  { label: 'Home', href: NAVIGATION_PATHS.home },
-  { label: 'Posts', href: NAVIGATION_PATHS.posts.root },
-  { label: 'Projects', href: NAVIGATION_PATHS.project },
-  { label: 'About Me', href: NAVIGATION_PATHS.about },
-];

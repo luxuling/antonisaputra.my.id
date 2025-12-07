@@ -14,13 +14,9 @@ import ContentCard from '@/components/content-card';
 export default function RecentPost({ posts }: { posts: PostList }) {
   return (
     <Container>
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3 text-center">
         <Typography variant="h1">Recent Posts</Typography>
         <Typography>What’s On My Mind: Coding and Everything Else.</Typography>
-        <Button href={NAVIGATION_PATHS.posts.root}>
-          <Typography variant="base">See All</Typography>
-          <ArrowUpRight />
-        </Button>
       </div>
       <div
         className={cn(
@@ -44,6 +40,10 @@ export default function RecentPost({ posts }: { posts: PostList }) {
           )}
         />
       </div>
+      <Button href={NAVIGATION_PATHS.posts.root} className="mx-auto mt-6">
+        <Typography variant="base">See All</Typography>
+        <ArrowUpRight />
+      </Button>
     </Container>
   );
 }

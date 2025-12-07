@@ -4,6 +4,7 @@ import { JetBrains_Mono, DotGothic16 } from 'next/font/google';
 
 import './globals.css';
 import Footer from '@/components/footer';
+import NavMenu from '@/components/nav-menu';
 import ClientProvider from '@/components/provider/client-provider';
 
 const jetBrainsMono = JetBrains_Mono({
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${jetBrainsMono.variable} ${dotGothic.variable} antialiased`}
     >
       <body>
+        <NavMenu />
         <ClientProvider>{children}</ClientProvider>
         <Footer />
       </body>

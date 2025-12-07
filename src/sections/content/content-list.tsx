@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import { PostList } from '@/types/post';
 import For from '@/components/core/for';
 import { ProjectList } from '@/types/project';
@@ -18,15 +19,27 @@ export default function ContentList({
 }: ContentListProps) {
   return (
     <Container>
-      <Typography variant="h1">{title}</Typography>
-      <Typography variant="base">{subtitle}</Typography>
-      <div className="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2">
+      <div className="text-center">
+        <Typography variant="h1">{title}</Typography>
+        <Typography variant="base">{subtitle}</Typography>
+      </div>
+      <div
+        className={cn(
+          'mt-6 w-full',
+          list.length > 1
+            ? 'mt-6 grid grid-cols-1 gap-2 md:grid-cols-2'
+            : 'flex items-center justify-center'
+        )}
+      >
         <For
           data={list}
           render={(content) => (
             <ContentCard
               content={content}
-              className="h-full w-full"
+              className={cn(
+                'h-full',
+                list.length > 1 ? 'w-full' : 'w-fit max-w-md'
+              )}
               showActions={false}
             />
           )}

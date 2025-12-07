@@ -1,9 +1,8 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import Button from '@/components/button';
 import { SITE_CONFIG } from '@/lib/config';
-import XIcon from '@/components/icons/x-icon';
 import { Tooltip } from '@/components/core/tooltip';
 
 interface SocialLinksProps {
@@ -22,9 +21,9 @@ const SOCIALS = [
     label: 'LinkedIn',
   },
   {
-    icon: <XIcon width={14} height={14} />,
-    link: SITE_CONFIG.xUrl,
-    label: 'X',
+    icon: <Instagram width={14} height={14} />,
+    link: SITE_CONFIG.instagramUrl,
+    label: 'Instagram',
   },
 ];
 

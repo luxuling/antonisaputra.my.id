@@ -14,15 +14,11 @@ import ContentCard from '@/components/content-card';
 export default function RecentProject({ projects }: { projects: ProjectList }) {
   return (
     <Container>
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-3 text-center">
         <Typography variant="h1">Recent Projects</Typography>
         <Typography>
           Experiments I’m trying and tools I’m building along the way
         </Typography>
-        <Button href={NAVIGATION_PATHS.projects.root}>
-          <Typography variant="base">See All</Typography>
-          <ArrowUpRight />
-        </Button>
       </div>
       <div
         className={cn(
@@ -45,6 +41,10 @@ export default function RecentProject({ projects }: { projects: ProjectList }) {
           )}
         />
       </div>
+      <Button href={NAVIGATION_PATHS.projects.root} className="mx-auto mt-6">
+        <Typography variant="base">See All</Typography>
+        <ArrowUpRight />
+      </Button>
     </Container>
   );
 }
