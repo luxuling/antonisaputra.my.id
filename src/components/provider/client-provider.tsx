@@ -1,6 +1,6 @@
 'use client';
-
 import { Toaster } from 'sonner';
+import NextTopLoader from 'nextjs-toploader';
 
 import { Cursor } from '../cursor';
 import Loading from '../../../app/loading';
@@ -12,6 +12,7 @@ interface ClientProviderProps {
 export default function ClientProvider({ children }: ClientProviderProps) {
   return (
     <>
+      <NextTopLoader color="#ef000a" showSpinner={false} height={1} />
       <Toaster
         position="top-right"
         expand={true}

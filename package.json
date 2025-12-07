@@ -21,6 +21,7 @@
     "lucide-react": "^0.548.0",
     "motion": "^12.23.25",
     "next": "16.0.7",
+    "nextjs-toploader": "^3.9.17",
     "postprocessing": "^6.38.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
