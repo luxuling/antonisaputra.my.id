@@ -2,7 +2,6 @@
 
 import { useMemo } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-
 import { LucideIcon, MessageCircleQuestionMark, ToolCase } from 'lucide-react';
 import {
   BookUser,
@@ -13,11 +12,11 @@ import {
   TextCursorInput,
 } from 'lucide-react';
 
+import { cn } from '@/lib/utils';
 import { NAVIGATION_PATHS } from '@/lib/config';
 
-import ToolbarExpandable, { ItemToolbar } from './core/toolbar-expandable';
 import Typography from './typography';
-import { cn } from '@/lib/utils';
+import ToolbarExpandable, { ItemToolbar } from './core/toolbar-expandable';
 
 const isPathNameSame = (path: string, pathname: string) => {
   return path.replace('/', '') === pathname.replace('/', '');
