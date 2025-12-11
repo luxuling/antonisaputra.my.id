@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="en"
       className={`${jetBrainsMono.variable} ${dotGothic.variable} antialiased`}
     >
-      <body>
+      <body className='relative'>
         <NavMenu />
         <ClientProvider>{children}</ClientProvider>
         <Footer />

@@ -1,11 +1,11 @@
 import type { MDXComponents } from 'mdx/types';
 
 import CodeBlock from './components/codeblock';
-import ImageWithModal from './components/image-with-modal';
+import MorphingImage from './components/morphing-image';
 
 const components: MDXComponents = {
   CodeBlock,
-  ImageWithModal,
+  MorphingImage,
 };
 
 export function useMDXComponents(): MDXComponents {
